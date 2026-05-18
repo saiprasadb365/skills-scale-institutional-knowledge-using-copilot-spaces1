@@ -1,0 +1,64 @@
+name: "Add Content to Project Management Process Docs"
+description: "Request to add new content or updates to an existing program management process document."
+title: "[Process Doc Update]: Add README, project management processes summary, and links for OctoAcme Docs"
+labels: ["documentation", "process improvement"]
+body:
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update? (If this is a new document, select '')"
+      description: "Select the program management process document you want to add content to. If this is a new process doc, choose ''."
+      options:
+        - octoacme-project-management-overview.md
+        - octoacme-project-initiation.md
+        - octoacme-project-planning.md
+        - octoacme-execution-and-tracking.md
+        - octoacme-risks-and-communication.md
+        - octoacme-release-and-deployment.md
+        - octoacme-retrospective-and-continuous-improvement.md
+        - octoacme-roles-and-personas.md
+        - 
+    validations:
+      required: true
+    default: ""
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      description: "Briefly describe the new content or update you want to add."
+      placeholder: "Add a new README to the docs folder that includes a brief description of the OctoAcme project management approach and direct links to all process documents."
+    validations:
+      required: true
+    default: "Add a new README to the docs folder that includes a brief summary of OctoAcme project management processes and links to all docs in the docs folder."
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      description: "Explain the reason for this addition. Is it to address a gap, improve clarity, incorporate a best practice, etc.?"
+      placeholder: "To give new team members and stakeholders a clear entry point for learning project management at OctoAcme and improve process doc discoverability."
+    validations:
+      required: true
+    default: "To give new team members and stakeholders a clear entry point for learning project management at OctoAcme and improve process doc discoverability."
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content (optional)"
+      description: "Paste the proposed new text, checklist, diagram, or example content you'd like to add. (Optional)"
+      placeholder: "README outline, sample summary, and example list of links."
+      default: "# OctoAcme Project Management Docs\n\nThis README provides a summary of OctoAcme's project management processes and direct links to all living process documents.\n\n## Summary of Project Management Processes\nOctoAcme project management is built on customer-first delivery, clear accountability, iterative planning, and risk transparency. Cross-functional roles and documentation ensure repeatability and drive continuous improvement.\n\n## Process Docs Index\n- [Project Management Overview](docs/octoacme-project-management-overview.md)\n- [Project Initiation Guide](docs/octoacme-project-initiation.md)\n- [Project Planning](docs/octoacme-project-planning.md)\n- [Execution & Tracking](docs/octoacme-execution-and-tracking.md)\n- [Risks & Communication](docs/octoacme-risks-and-communication.md)\n- [Release & Deployment Guide](docs/octoacme-release-and-deployment.md)\n- [Retrospective & Continuous Improvement](docs/octoacme-retrospective-and-continuous-improvement.md)\n- [Roles and Personas](docs/octoacme-roles-and-personas.md)\n"
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Check all that apply:"
+      options:
+        - label: "Content aligns with existing process docs"
+          default: true
+        - label: "Update improves clarity or closes a documented gap"
+          default: true
+        - label: "Proposed content has been reviewed with stakeholders (if needed)"
+          default: false
